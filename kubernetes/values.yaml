@@ -1,0 +1,10 @@
+build:
+  ifbuild: False
+  gitURL: "https://github.com/onkarsawant/pylogger.git"
+  branch: "master"
+
+deployment:
+  replicas: 2
+  image: "pylogger"
+  imageTag: "latest"
+  port: 5000

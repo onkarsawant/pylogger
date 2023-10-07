@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Request Logger</title>
+</head>
+<body>
+    <h1>Request Logger</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Timestamp</th>
+                <th>Client IP</th>
+                <th>URL</th>
+                <th>Write Speed (seconds)</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for log_entry in log_entries %}
+                <tr>
+                    <td>{{ log_entry.split(' - ')[0] }}</td>
+                    <td>{{ log_entry.split(' - ')[1] }}</td>
+                    <td>{{ log_entry.split(' - ')[2] }}</td>
+                    <td>{{ log_entry.split(' - ')[3] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <a href="/log_request">Log New Request</a>
+</body>
+</html>

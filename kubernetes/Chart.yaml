@@ -1,0 +1,16 @@
+apiVersion: v2
+name: pylogger-app  
+description: A Helm chart simple python logger application
+type: application
+
+# Version of your chart
+version: 0.1.0
+
+# Keywords associated with your chart
+keywords:
+  - pythonlogger
+  - pylogger
+  - helm
+
+
+

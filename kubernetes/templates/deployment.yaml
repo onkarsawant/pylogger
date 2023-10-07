@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pylogger
+spec:
+  replicas: {{.Values.deployment.replicas}}
+  selector:
+    matchLabels:
+      app: pylogger
+  template:
+    metadata:
+      labels:
+        app: pylogger
+    spec:
+      containers:
+      - name: pylogger-container
+        image: {{.Values.deployment.image}}:{{.Values.deployment.imageTag}}
+        ports:
+        - containerPort: {{.Values.deployment.port}}

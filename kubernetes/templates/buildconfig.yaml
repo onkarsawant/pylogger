@@ -1,0 +1,21 @@
+{{- if .Values.build.ifbuild }}
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  name: pylogger
+spec:
+  source:
+    git:
+      uri: {{ .Values.build.gitURL }}
+      branch: {{ .Values.build.branch }}
+  strategy:
+    sourceStrategy:
+      from:
+        kind: ImageStreamTag
+        name: python:3.8
+    type: Source
+  output:
+    to:
+      kind: ImageStreamTag
+      name: pylogger:latest
+{{- end }}
