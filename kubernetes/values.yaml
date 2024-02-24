@@ -5,6 +5,6 @@ build:
 
 deployment:
   replicas: 2
-  image: "onkarsawant/pylogger"
+  image: "docker.io/onkarsawant/pylogger"
   imageTag: "latest"
   port: 5000
