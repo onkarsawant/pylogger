@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: pylogger
   annotations:
-    argocd.argoproj.io/sync-options: Delete=false
+    argocd.argoproj.io/sync-options: 'Delete=false,Replace=false'
 spec:
   replicas: {{.Values.deployment.replicas}}
   selector:
